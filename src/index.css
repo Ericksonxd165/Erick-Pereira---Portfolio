@@ -1,0 +1,726 @@
+
+@import 'tailwindcss';
+
+*{
+  scroll-behavior: smooth !important;
+   color-scheme: dark;
+}
+
+.purple{
+  background-color: #c27aff;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a:active, a:focus {
+  color: inherit !important;
+  outline: none;
+}
+a .fa-brands:active, a .fa-brands:focus {
+  color: inherit !important;
+}
+
+a:active, a:focus {
+  color: inherit !important;
+  outline: none;
+}
+
+.github {
+  color: #fff; /* o el color que prefieras como base */
+}
+.telegram {
+  color: #fff;
+}
+.linkedin {
+  color: #fff !important;
+}
+
+a .fa-brands:active, a .fa-brands:focus {
+  color: inherit !important;
+}
+/* From Uiverse.io by Praashoo7 */ 
+.card {
+  width: 50em;
+  height: 30.5em;
+  background: #171717;
+  transition: 1s ease-in-out;
+  clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-in{ 
+  background-color: black;
+  border-radius: 12px;
+}
+
+.card span:not(.terminal-cursor) {
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  display: block;
+  font-size: 1em;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+  margin-left: 0;
+}
+
+.card .information-text{
+  display: flex;
+  margin: auto;
+  padding: 50px;
+}
+
+.card .info {
+  font-weight: 400;
+  color: white;
+  width: 400px;
+  display: flexs;
+  text-align:justify;
+  font-size: 1em;
+  margin: 1em;
+  padding: 1em;
+}
+
+.card .img {
+  width: 12em;
+  height: 15em;
+  background:white;
+  border-radius: 15px;
+  margin: auto;
+}
+
+.card .img img{
+  height:15em;
+  width: 12em;
+  border-radius: 2px;
+  object-fit: cover;
+}
+
+.card .share {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.card a {
+  color: white;
+  transition: .4s ease-in-out;
+}
+
+.card a:hover {
+  color: red;
+}
+
+.card button {
+  padding: 0.8em 1.7em;
+  display: block;
+  margin: auto;
+  border-radius: 25px;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+  transition: .4s ease-in-out;
+}
+
+
+
+.lights{
+
+  height: 10px;
+}
+.card button:hover {
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+/* From Uiverse.io by aadium */ 
+.card-tec {
+  background-color: #1e2127;
+  border: 3px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 700;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  padding: 30px 20px;
+  color: white;
+  border-radius: 15px;
+  height: 180px;
+  width: 180px;
+}
+
+
+.card-tec:hover {
+  background-color: #61dafb;
+  transform: scale(1.05);
+  transition: 0.8s; 
+  
+} 
+
+.App-logo {
+  pointer-events: none;
+  margin-top: -10px
+}
+
+.App-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: #61dafb;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 15px;
+  border: 3px solid #61dafb;
+  border-radius: 5em;
+  margin-top: 20px;
+  transition: 0.2s;
+}
+
+.App-button:hover {
+  color: #1e2127;
+  background-color: #61dafb;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.layout {
+
+
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(5, 2fr);
+  gap: 10px;
+}
+
+
+.bg-dark{
+  background: #0F2027;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+
+.bg-light{
+  background: #ADA996;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.terminal-cursor {
+  display: inline-block;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+
+.terminal-text {
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', 'Monaco', monospace;
+  font-size: 1.05em;
+  color: #ffffff;
+  background: transparent;
+}
+
+img.img-me {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 1s;
+}
+img.img-me:hover {
+  transform: scale(1.05);
+  transition: 1s;
+}
+img.img-me:active {
+  transform: scale(0.95);
+  transition: 1s;
+}
+
+
+
+
+.github:hover {
+  color: #333; /* GitHub negro */
+  scale: 1.3;
+  transition: .5s;
+  cursor: pointer;
+}
+.telegram:hover {
+  color: #28a4e3; /* telegram azul */
+    scale: 1.3;
+  transition: .5s;
+  cursor: pointer;
+}
+.linkedin:hover {
+  color: #0073b2 !important;/* LinkedIn azul */
+    scale: 1.3;
+  transition: .5s;
+  cursor: pointer;
+}
+
+
+
+.hero .hero-waves {
+  display: block;
+  width: 100%;
+  height: 60px;
+  position: relative;
+}
+
+.hero .wave1 use {
+  animation: move-forever1 10s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+  opacity: 0.6;
+}
+
+.hero .wave2 use {
+  animation: move-forever2 8s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+  opacity: 0.4;
+}
+
+.hero .wave3 use {
+  animation: move-forever3 6s linear infinite;
+  animation-delay: -2s;
+  fill: var(--default-color);
+}
+
+@keyframes move-forever1 {
+  0% {
+    transform: translate(85px, 0%);
+  }
+
+  100% {
+    transform: translate(-90px, 0%);
+  }
+}
+
+@keyframes move-forever2 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever3 {
+  0% {
+    transform: translate(-90px, 0%);
+  }
+
+  100% {
+    transform: translate(85px, 0%);
+  }
+}
+
+
+/* From Uiverse.io by Smit-Prajapati */ 
+.orange {
+  color: #4e08dd;
+}
+
+.form-container {
+  max-width: 700px;
+  margin: 30px;
+  background-color: #001925;
+  padding: 30px;
+  border-left: 5px solid #4e08dd;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+.heading {
+  display: block;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.form-container .form .input {
+  color: #87a4b6;
+  width: 100%;
+  background-color: #002733;
+  border: none;
+  outline: none;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+  border-left: 1px solid transparent;
+}
+
+.form-container .form .input:focus {
+  border-left: 5px solid #4e08dd;
+}
+
+.form-container .form .textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  background-color: #013747;
+  color: white;
+  font-weight: bold;
+  resize: none;
+  max-height: 150px;
+  margin-bottom: 20px;
+  border-left: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .textarea:focus {
+  border-left: 5px solid #4e08dd;
+}
+
+.form-container .form .button-container {
+  display: flex;
+  gap: 10px;
+}
+
+.form-container .form .button-container .send-button {
+  flex-basis: 70%;
+  background: #4e08dd;
+  padding: 10px;
+  color: #001925;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .send-button:hover {
+  background: transparent;
+  border: 1px solid #4e08dd;
+  color: #4e08dd;
+}
+
+.form-container .form .button-container .reset-button-container {
+  filter: drop-shadow(1px 1px 0px #4e08dd);
+  flex-basis: 30%;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button {
+  position: relative;
+  text-align: center;
+  padding: 10px;
+  color: #4e08dd;
+  font-weight: bold;
+  background: #001925;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-container .form .button-container .reset-button-container .reset-button:hover {
+  background: #4e08dd;
+  color: #001925;
+}
+
+/* From Uiverse.io by AmIt-DasIT */ 
+/* The switch - the box around the slider */
+.switch {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #223243;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #223243;
+  box-shadow: inset 2px -2px 0 1.8px #fff;
+  transition: .4s;
+  animation: anima1 0.3s linear;
+}
+
+@keyframes anima1 {
+  0% {
+    transform: translateX(1.5em);
+  }
+
+  80% {
+    transform: translateX(-0.3em);
+  }
+
+  100% {
+    transform: translateX(0em);
+  }
+}
+
+.switch input:checked + .slider:before {
+  background-color: yellow;
+  box-shadow: none;
+  transform: translateX(1.5em);
+  animation: anima 0.3s linear;
+}
+
+@keyframes anima {
+  0% {
+    transform: translateX(0px)
+  }
+
+  80% {
+    transform: translateX(1.6em)
+  }
+
+  100% {
+    transform: translateX(1.4em)
+  }
+}
+
+/* --- Switch de idioma --- */
+.switch-lang {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+}
+.switch-lang input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider-lang {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #223243;
+  transition: .4s;
+  border-radius: 30px;
+}
+.slider-lang:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 20px;
+  left: 0.3em;
+  bottom: 0.3em;
+  background-color: #223243;
+  background-image: url('https://flagcdn.com/gb.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: .4s;
+}
+.switch-lang input:checked + .slider-lang:before {
+  background-color: yellow;
+  background-image: url('https://flagcdn.com/es.svg');
+  transform: translateX(1.5em);
+}
+
+/* --- Theme-specific styles --- */
+body.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #f7fafc;
+  color: #222;
+}
+
+body.light-mode .bg-gray-900 {
+  background-color: #2f5cfc;
+}
+
+body.light-mode .card {
+  background:#333;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.5));
+}
+
+
+body.light-mode .card-in {
+  background-color: #f8f5f5;
+}
+
+body.light-mode .terminal-text {
+  color: #00ff00;
+}
+
+body.light-mode .card-in {
+    background-color: #000;
+}
+
+body.light-mode .particles-container {
+    background-color: #1100ccef;
+}
+
+
+@media screen and (max-width: 768px) {
+ .responsive-styles{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.4rem !important;
+  margin: 5rem;
+
+ }
+
+.card{
+  width: 98% !important;
+  height: 60% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+ }
+
+.img{
+  width: 100% !important;
+  height: 200px !important;
+  background-color: #000 !important;
+  margin-left:0px !important;
+}
+
+.img-me{
+  width: 100% !important;
+  height: 100% !important;
+  background-color: #000 !important;
+  margin-left:15px !important;
+}
+
+ .info{
+  font-size: 0.6em !important;
+  
+ }
+ .card-in{
+  width: 90% !important;
+  height: 70% !important;
+  padding: 0 !important;
+ }
+
+
+ .this-one{
+  margin-left: 10% !important;
+  margin-top: 30% !important;
+  width: 100% !important;
+ }
+
+.help{
+  height: 400px !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-left: 20% !important;
+
+}
+
+
+ .and-here{
+  margin-left: 0 !important;
+  font-size: 1.3rem !important;
+    width: 80% !important;  
+  text-align: center;
+ }
+
+ .aaand-here{
+  margin-left: 0 !important;
+  font-size: 2px;
+  text-align: center;
+ }
+  
+.layout{
+  margin: 20px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  display: grid;
+  grid-template-rows: repeat(5, 6.8rem);
+  grid-template-columns: repeat(3,6.4rem);
+  gap: 18px !important;
+  padding:20px !important;
+
+}
+
+.respon-h{
+ height: calc(var(--spacing) * 510)
+}
+
+.texto-peque{
+  font-size: 1.2rem !important;
+  text-align: center;
+  margin-top: 20px !important;
+}
+
+.card-tec{
+  width: 100% !important;
+  height: 120px  !important;
+  font-size: 1rem !important;
+}
+
+.titulo-futurista{
+  font-size: 2.3rem !important;
+  text-align: center;
+}
+#text-rotativo{
+  height:800px !important;
+}
+
+}

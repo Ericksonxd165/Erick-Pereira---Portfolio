@@ -1,0 +1,330 @@
+* {
+	user-select: none;
+	-webkit-tap-highlight-color: transparent;
+	outline: none;
+}
+
+/* VARIABLES */
+:root {
+	--primary-color: #000000;
+	--secondary-color: #ffffff;
+	--thrid-color: #1f2630;
+	--hover1: #f9e74d;
+	--white: #ffffff;
+	--transparent: transparent;
+  scroll-behavior: smooth !important;
+}
+
+
+/* HEADER PRINCIPAL */
+.header-main {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  height: 13vh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  min-height: 60px;
+  padding: 25px;
+  /* Glassmorphism ↓↓↓ */
+  background: rgba(15, 15, 15, 0.4); /* fondo oscuro semitransparente */
+  backdrop-filter: blur(12px);       /* desenfoque de fondo */
+  -webkit-backdrop-filter: blur(12px); /* soporte Safari */
+  border-bottom: 1px rgba(255, 255, 255, 0.1); /* borde sutil */
+}
+
+.header-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 60%;
+	padding: 0 15px;
+	
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.titulo-futurista {
+  font-weight: 800;
+}
+
+.header-logo-container {
+	display: flex;
+	flex-direction: column;
+	line-height: 1;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.veep-text {
+	font-size: 26px;
+	font-weight: 800;
+	color: var(--secondary-color);
+	letter-spacing: 2px;
+}
+
+.drivers-text {
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--white);
+	letter-spacing: 9px;
+	margin-top: 5px;
+}
+
+.container-alitas {
+	width: 33px;
+	height: 33px;
+	background-color: var(--secondary-color);
+	cursor: pointer;
+	z-index: 110;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3px;
+	position: relative; /* Needed for badge positioning */
+}
+
+.container-alitas .notification-badge {
+	position: absolute;
+	top: -5px; /* Adjust as needed */
+	right: -5px; /* Adjust as needed */
+	background-color: red;
+	color: white;
+	border-radius: 50%;
+	padding: 2px 6px; /* Adjust padding to make it more circular for single digits */
+	font-size: 10px; /* Smaller font size */
+	font-weight: bold;
+	min-width: 18px; /* Ensure circle shape for numbers like 1 */
+	height: 18px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: 1px solid var(--secondary-color); /* Optional: adds a border matching the alitas bg */
+}
+
+
+.container-alitas:hover {
+	background-color: var(--hover1);
+}
+
+.header-menu-icon {
+	margin-top: 3px;
+	width: 90%;
+	height: auto;
+	object-fit: contain;
+}
+
+.header-bottom {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 40%;
+	font-size: 18px;
+	padding: 0 15px;
+	/* 
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); 
+		border-radius: 0 0 20px 20px;
+	*/
+}
+
+.header-greeting,
+.header-balance {
+	color: var(--primary-color);
+	font-weight: bold;
+}
+
+
+.gasoline-content{
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: var(--secondary-color);
+padding: 5px 10px;
+border-radius: 20px;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+
+}
+
+.gasoline-content img{
+
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	margin-right: 5px;
+}
+
+.gasoline-saldo{
+	font-size: 0.9rem;
+}
+
+
+/* From Uiverse.io by WhiteNervosa */ 
+button {
+  font-size: 14px;
+  color: #e1e1e1;
+  font-family: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  text-transform: uppercase;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: color;
+}
+
+button:focus,
+button:hover {
+  color: #5a08ff;
+}
+
+button:focus:after,
+button:hover:after {
+  width: 100%;
+  left: 0%;
+}
+
+button:after {
+  content: "";
+  pointer-events: none;
+  bottom: -2px;
+  left: 50%;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background-color: #5a08ff;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-duration: 400ms;
+  transition-property: width, left;
+}
+
+.header-container {
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .header-main {
+    height: auto;
+    min-height: 60px;
+    padding-bottom: 10px;
+  }
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 10px;
+  }
+  .header-logo-container {
+    margin-bottom: 0.5rem;
+    margin-left: 0;
+  }
+  .header-buttons {
+    flex-wrap: wrap;
+    gap: 8px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-main {
+    height: auto;
+    min-height: 60px;
+    padding-bottom: 10px;
+  }
+  .header-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+  }
+  .header-logo-container {
+    margin-bottom: 0;
+    margin-left: 0;
+  }
+  .header-buttons {
+    display: none;
+  }
+  .header-menu-toggle {
+    display: flex !important;
+	z-index: 1000000000000000000000;
+  }
+}
+
+/* Menu lateral */
+.header-side-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 220px;
+  height: 100vh;
+  background: #181028;
+  z-index: 9999;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem 1rem 1rem;
+  transition: transform 0.3s;
+  transform: translateX(100%);
+}
+.header-side-menu.open {
+  transform: translateX(0%);
+}
+.header-side-menu .close-btn {
+  align-self: flex-end;
+  font-size: 2rem;
+  color: #fff;
+  background: none !important;
+  border: none;
+  margin-bottom: 2rem;
+  cursor: pointer;
+}
+.header-side-menu button {
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: left;
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.header-side-menu button:hover {
+  background: #4e08dd;
+  color: #fff;
+}
+
+.header-menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  z-index: 100000000000000000000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
