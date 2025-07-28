@@ -13,7 +13,7 @@ export function Peranuevaaa(props) {
       group.current.rotation.y += delta * 0.5; // Slow rotation around Y-axis
       group.current.position.z = -2.5; // Adjust height for mobile
       group.current.position.x = -1.5; // Adjust height for mobile
-      group.current.position.y = 4; // Adjust height for mobile
+      group.current.position.y = 2.8; // Adjust height for mobile
     }
   });
 
