@@ -223,7 +223,7 @@ function Index() {
               <directionalLight position={[10, 10, 5]} intensity={1} />
               <pointLight position={[10, 10, 10]} intensity={1} />
               <Suspense fallback={null}>
-                <Peranuevaaa />
+                <Peranuevaaa isMobile={isMobile} />
               </Suspense>
               {!isMobile && <OrbitControls
                 enableZoom={false}
