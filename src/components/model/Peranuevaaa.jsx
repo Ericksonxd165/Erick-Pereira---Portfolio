@@ -8,8 +8,8 @@ export function Peranuevaaa(props) {
 
   useFrame((state, delta) => {
     if (props.isMobile && group.current) {
-      group.current.rotation.x = -0.251; // Remove depth rotation
-      group.current.rotation.z = 2.5; // Remove depth rotation
+      group.current.rotation.x = 0; // Remove depth rotation
+      group.current.rotation.z = 1; // Remove depth rotation
       group.current.rotation.y += delta * 0.5; // Slow rotation around Y-axis
     }
   });
