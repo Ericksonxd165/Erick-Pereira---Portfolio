@@ -18,7 +18,7 @@ const Header = ({ texto, texto2, headerTranslations, language }) => {
       <header className="header-main">
         <div className="flex items-center justify-between header-container">
           <div className="header-logo-container">
-            <span className="veep-text">{texto}</span>
+            <span className="veep-text" onClick={() => window.scrollTo(0, 0)} style={{ cursor: 'pointer' }}>{texto}</span>
             <span className="drivers-text">{texto2}</span>
           </div>
           {/* Botones desktop */}

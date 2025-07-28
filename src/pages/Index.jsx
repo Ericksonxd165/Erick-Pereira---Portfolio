@@ -5,10 +5,7 @@ import { Canvas } from "react-three-fiber";
 import { Peranuevaaa } from "../components/model/Peranuevaaa";
 import { OrbitControls } from "@react-three/drei";
 import RotatingText from "../components/text/RotatingText";
-
-
-
-
+import { section } from "framer-motion/client";
 
 const translations = {
   en: {
@@ -75,6 +72,18 @@ function Index() {
   const [imgSrc3, setImgSrc3] = useState("/petrodevpclight.png");
   const [language, setLanguage] = useState('en');
   const [theme, setTheme] = useState('dark');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const t = translations[language]; 
 
@@ -151,31 +160,26 @@ function Index() {
     localStorage.setItem('theme', newTheme);
     document.body.className = newTheme + '-mode';
   }; 
-
  
   return (
+    
+
     <div className="min-h-screen w-screen relative overflow-x-hidden z-10000">
       <Header texto={"Erick Pereira"} texto2={"Developer"} headerTranslations={t.header} language={language} />
 
-      <div
-        className="particles-container"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 0,
-        }}
+      <section 
+        id="home" 
+        className="relative w-full h-screen mx-auto flex flex-col md:flex-row items-center justify-center"
       >
         <div
+          className="particles-container"
           style={{
             position: "absolute",
             top: 0,
             left: 0,
             width: "100%",
-            height: "100vh",
-            zIndex: 1,
+            height: "100%",
+            zIndex: 0,
           }}
         >
           <Particles
@@ -190,50 +194,48 @@ function Index() {
           />
         </div>
 
-    <div
-  className="flex flex-col md:flex-row relative z-20 h-full w-full"
->
-  <div
-    className="flex-1 flex items-start justify-start text-white px-6 md:pl-12 text-left mt-10 md:mt-50 ml-50   this-one "
-  >
-<h2 className="titulo-futurista text-3xl sm:text-4xl ml-10 md:text-5xl text-white leading-tight flex flex-wrap items-center  and-here">
-  <span className="inline-block">{t.intro}&nbsp;</span>
-<RotatingText
-              texts={t.rotating}
-              mainClassName="px-1 sm:px-1 sm:mt-1 md:px-2 bg-purple-500 h-35 w-100 font-bold text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center items-center rounded-lg   aand-here"
-              staggerFrom={"last"}
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-120%" }}
-              staggerDuration={0.025}
-              splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-              transition={{ type: "spring", damping: 30, stiffness: 400 }}
-              rotationInterval={2000}
-            />
-</h2>
-  </div>
+        <div className="flex flex-col md:flex-row relative z-20 h-full w-full">
+          <div className="flex-1 flex items-start justify-start text-white px-6 md:pl-12 text-left mt-10 md:mt-50 ml-50 this-one">
+            <h2 className="titulo-futurista text-3xl sm:text-4xl ml-10 md:text-5xl text-white leading-tight flex flex-wrap items-center and-here">
+              <span className="inline-block">{t.intro}&nbsp;</span>
+              <RotatingText
+                texts={t.rotating}
+                mainClassName="px-1 sm:px-1 sm:mt-1 md:px-2 bg-purple-500 h-35 w-100 font-bold text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center items-center rounded-lg aand-here"
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2000}
+              />
+            </h2>
+          </div>
 
-  <div className="flex-1 relative flex justify-center items-center h-[200px] sm:h-[600px] md:h-auto mt-4 md:mt-0   huh">
-    <Canvas
-      camera={{ zoom: 1.8, position: [2, 10, 10] }}
-      className="w-[90%] md:w-[100%] h-full   help"
-      gl={{ alpha: true }}
-    >
-      <ambientLight intensity={0.5} />
-      <directionalLight position={[10, 10, 5]} intensity={1} />
-      <pointLight position={[10, 10, 10]} intensity={1} />
-      <Suspense fallback={null}>
-        <Peranuevaaa />
-      </Suspense>
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-      />
-    </Canvas>
-  </div>
-</div>
+          <div className={`flex-1 relative flex justify-center items-center h-[200px] sm:h-[600px] md:h-auto mt-4 md:mt-0 huh ${isMobile ? 'canvas-container' : ''}`}>
+            <Canvas
+              camera={{ zoom: 1.8, position: [2, 10, 10] }}
+              className="w-[90%] md:w-[100%] h-full help"
+              gl={{ alpha: true }}
+            >
+              <ambientLight intensity={0.5} />
+              <directionalLight position={[10, 10, 5]} intensity={1} />
+              <pointLight position={[10, 10, 10]} intensity={1} />
+              <Suspense fallback={null}>
+                <Peranuevaaa />
+              </Suspense>
+              {!isMobile && <OrbitControls
+                enableZoom={false}
+                enablePan={false}
+                minPolarAngle={Math.PI / 2}
+                maxPolarAngle={Math.PI / 2}
+              />}
+            </Canvas>
+          </div>
+        </div>
+      </section>
+
 
         <section id="about-me"  className="w-full bg-gray-900 h-screen flex flex-col justify-center items-center">
         <br />
@@ -1001,7 +1003,7 @@ function Index() {
 
         </section>
       </div>
-    </div>
+
   );
 }
 

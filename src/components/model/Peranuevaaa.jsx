@@ -4,13 +4,34 @@ Command: npx gltfjsx@6.5.3 peranuevaaa.glb --transform
 Files: peranuevaaa.glb [169.22KB] > C:\Users\Erick\Documents\3D models\Pera\peranuevaaa-transformed.glb [26.74KB] (84%)
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React, { useRef, useEffect, useState } from 'react';
+import { useGLTF } from '@react-three/drei';
+import { useFrame } from '@react-three/fiber';
 
 export function Peranuevaaa(props) {
-  const { nodes, materials } = useGLTF('/peranuevaaa-transformed.glb')
+  const { nodes, materials } = useGLTF('/peranuevaaa-transformed.glb');
+  const group = useRef();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useFrame((state, delta) => {
+    if (isMobile && group.current) {
+      group.current.rotation.y += delta * 0.5; // Rotación lenta
+    }
+  });
+
   return (
-    <group {...props} dispose={null}>
+    <group ref={group} {...props} dispose={null}>
       <group position={[-0.251, 2.5, -0.229]} rotation={[-0.1, 3.5, 0.1]} scale={[0.064, 0.635, 0.064]}>
         <mesh geometry={nodes.Cylinder.geometry} material={materials.PaletteMaterial001} />
         <mesh geometry={nodes.Cylinder_1.geometry} material={materials.PaletteMaterial002} />
@@ -21,7 +42,7 @@ export function Peranuevaaa(props) {
         <mesh geometry={nodes.Cylinder_6.geometry} material={materials.PaletteMaterial004} />
       </group>
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/peranuevaaa-transformed.glb')
+useGLTF.preload('/peranuevaaa-transformed.glb');

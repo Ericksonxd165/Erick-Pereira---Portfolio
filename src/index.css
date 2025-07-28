@@ -13,6 +13,7 @@
 body {
   font-family: 'Montserrat', sans-serif;
   transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
 }
 
 a:active, a:focus {
@@ -616,6 +617,10 @@ body.light-mode .particles-container {
 
 
 @media screen and (max-width: 768px) {
+  .canvas-container {
+    pointer-events: none;
+  }
+
  .responsive-styles{
   display: flex;
   flex-direction: column;
