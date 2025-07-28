@@ -9,8 +9,11 @@ export function Peranuevaaa(props) {
   useFrame((state, delta) => {
     if (props.isMobile && group.current) {
       group.current.rotation.x = -0.5; // Remove depth rotation
-      group.current.rotation.z = 0.1; // Remove depth rotation
+      group.current.rotation.z = 0; // Remove depth rotation
       group.current.rotation.y += delta * 0.5; // Slow rotation around Y-axis
+      group.current.position.z = -2.5; // Adjust height for mobile
+      group.current.position.x = -1.5; // Adjust height for mobile
+      group.current.position.y = 4; // Adjust height for mobile
     }
   });
 
